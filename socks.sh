@@ -58,7 +58,6 @@ while IFS= read -r line
 do
                 echo "# Testing proxy Sock 4: $line.. ";
                 echo "#"
-                # timeout 5 curl --socks4 $line -I https://johnmultisite.kinsta.cloud/ &> /dev/null | echo $line >> fresh.txt
                 if curl --socks4 $line --max-time 5 'https://google.com' &> /dev/null
                         then                                                                                                                                                                                                                                                                               
                         echo "# Connection for the $line was successful!"; 
